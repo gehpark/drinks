@@ -68,7 +68,7 @@ position: relative;
     padding-left: 40%;
     top:-1725px;
     left:85px;
-    z-index: 1;
+    z-index: -1;
 }
 #Salt{
 position: relative;
@@ -91,7 +91,11 @@ position: relative;
 
 #ingredientslist {
     font-family: 'Shadows Into Light', cursive;
+    position:relative;
+    margin-right: 70px;
     height: 500px;
+    left:500px;
+    z-index: 2;
 }
 .ingredientBox {
     opacity: 0.4;
