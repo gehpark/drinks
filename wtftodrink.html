@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script type="text/javascript" src="/support/paperjs/docs/assets/js/paper.js"></script>
+	<script type="text/javascript" src="/support/paperjs/docs/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="mixer.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="drink.css">
+
+	<script>
+	
+
+	function scrolltorecipe() {
+		if ($(window).width() < 655) {
+		    // var ele = $(this).closest("section").find(".thing");
+		    var ele = document.getElementById('recipedisplay');
+		    // this will search within the section
+		    $("html, body").animate({
+		         scrollTop: $(ele).offset().top
+		    }, 100);
+		    return false;
+		}
+	};
+	$(window).resize(function(){
+		var e = document.getElementById("text");
+		console.log($(window).width());
+	  	if ($(window).width() < 655) {
+	  	}
+	  	else {
+	  	}
+	  }
+	);
+	$(window).load(function(){
+	  	if ($(window).width() < 655) {
+	  		var e = document.getElementById("text");
+	  	}
+	  }
+	);
+$(document).ready(function()
+  {
+  	choosedrink();
+	});
+
+
+function choosedrink(option) {
+	if (option != null) {
+		drink = option;
+	}
+	else {
+		if (drinks.length == 0) {
+			document.getElementById("drinkchoice").innerHTML = "ask google!";
+			return;
+		}
+		index = Math.floor(Math.random() * drinks.length);
+		var drink = drinks[index];
+		// drinks.splice(index,1);
+	}
+	document.getElementById("drinkchoice").innerHTML = drink.nam;
+	pourdrink(drink);
+	garnish(drink.gar);
+}
+
+function pourdrink(drink){
+	var ingred = drink.ingredients
+	var x = 10
+	var y = 490
+	for (i = 0; i < ingred.length; i++) {
+		$("#box"+i).css('background-color', ingred[i][0].color);
+		$("#box"+i).animate({height:""+(ingred[i][1] * 3.7)+"px"}, 1500, "swing");
+		$('#IN'+i).html(""+ingred[i][0].nam);
+		$('#IN'+i).css('height', ingred[i][1] * 3.5);
+	}
+}
+
+function garnish(gar){
+	for (i = 0; i < gar.length; i++) {
+		console.log(gar[i].nam);
+		var g = document.getElementById(gar[i].nam);
+		g.style.visibility = "visible";
+	}
+}
+
+function clearboxes(){
+	document.getElementById("gohomemsg").innerHTML = "";
+	for (i=0; i < 7; i++) {
+		$("#box"+i).css('height', 0);
+		$('#IN'+i).html("");
+	}
+	for (i=0; i<garlist.length; i++)
+	{
+		var g = document.getElementById(garlist[i]);
+	console.log("hiding");
+		g.style.visibility = "hidden";
+	}
+}
+
+function givewater(){
+	clearboxes();
+	document.getElementById("drinkchoice").innerHTML = 'Water';
+	pourdrink(water);
+	document.getElementById("gohomemsg").innerHTML = "Go home. You're drunk.";
+}
+
+	</script>
+</head>
+
+<body>
+
+<div class="header">
+	<div id = "title">
+		<h1> What the fuck should I drink? </h1>
+	</div>
+</div>
+
+<div class="things">
+<div class = "thing" id="text" style="display:inline-block;">
+		<p id = "drinkchoice"> </p>
+		
+		<div class = "options"> 
+			<p id="gohomemsg"></p>
+			<div id="refresh">
+			<a href="#" onclick="clearboxes(); choosedrink();">EW!</a>
+			</div>
+
+			<div id = "gohome">
+			<a href="#" onclick="givewater()"> ahhhplss </a>
+			</div>
+
+			
+	</div>
+</div>
+
+
+
+
+<div class="thing" style="height:500px">
+	<div id = "recipedisplay" style="display: block;">
+		
+		<div class = "ingredientBox"> 
+			<div id="box5" style="height:0px;width:200px;margin:5px;">
+		</div>
+		</div>
+		<div class = "ingredientBox"> 
+			<div id="box4" style="height:0px;width:200px;margin:5px;">
+		</div>
+		</div>
+		<div class = "ingredientBox"> 
+			<div id="box3" style="height:0px;width:200px;margin:5px;">
+		</div>
+		</div>
+		<div class = "ingredientBox"> 
+			<div id="box2" style="height:0px;width:200px;margin:5px;">
+		</div>
+		</div>
+		<div class = "ingredientBox"> 
+			<div id="box1" style="height:0px;width:200px;margin:5px;">
+		</div>
+		</div>
+		<div class = "ingredientBox"> 
+			<div id="box0" style="height:0px;width:200px;margin:5px;">
+		</div>
+		</div>
+	</div>
+</div>
+
+<div id = "ingredientslist" height= '500'>
+	<p id = "IN5"></p>
+	<p id = "IN4"></p>
+	<p id = "IN3"></p>
+	<p id = "IN2"></p>
+	<p id = "IN1"></p>
+	<p id = "IN0"></p>
+	</div>
+
+<div class = "images">
+	<div id = "cup">
+		<img src = "/public/images/straightcup.png" height=470px></img>
+	</div>
+<div id = "cupglare">
+		<img src = "/public/images/glare.png" height=170px></img>
+	</div>
+	<div class = "garnishes" id = "garnishes">
+<div id = "Ice" style="visibility: hidden;">
+		<img src = "/public/images/icecubes.png" height=300px></img>
+	</div>
+	<div id = "Mint" style="visibility: hidden;">
+		<img src = "/public/images/mint.png" height=200px></img>
+	</div>
+	<div id = "Lime" style="visibility: hidden">
+		<img src = "/public/images/lime.png" height=200px></img>
+	</div>
+	<div id = "Salt" style="visibility: hidden;">
+		<img src = "/public/images/salt.png" height=100px></img>
+	</div>
+</div>
+</div>
+</div>
+
+
+<!-- TODO
+display ingredients
+
+	html at the end
+	-->

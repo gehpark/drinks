@@ -1,0 +1,158 @@
+.header {
+    background: #FFFFFF;
+    z-index: 300;
+    height: 100px;
+}
+.header h1 {
+    font-family: 'Shadows Into Light', cursive;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 20px;
+    color: #62b4c4;
+    z-index: 5;
+}
+
+.thing {
+    width: 40%;
+    display: inline-block;
+    float: left;
+    height: 500px;
+    z-index: 5;
+}
+
+.things{
+    padding-left: 10%;
+}
+.subbar {
+    display: inline-block;
+}
+#drinkchoice {
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+    text-transform: uppercase;
+    font-weight: 5px;
+    font-size: 50px;
+    border-style: solid;
+    z-index: 2;
+}
+
+#cup {
+    position: relative;
+    width: 40%;
+    padding-left: 40%;
+    top:-540px;
+    left:3px;
+    z-index: -10;
+}
+#Mint{
+position: relative;
+    width: 40%;
+    padding-left: 40%;
+    top:-1270px;
+    left:65px;
+    z-index: 2;
+    opacity: .7;
+}
+#Ice{
+position: relative;
+    width: 40%;
+    padding-left: 40%;
+    top:-1130px;
+    left:35px;
+    z-index: 1;
+    opacity: .5;
+}
+#Lime{
+position: relative;
+    width: 40%;
+    padding-left: 40%;
+    top:-1725px;
+    left:85px;
+    z-index: 1;
+}
+#Salt{
+position: relative;
+    width: 40%;
+    padding-left: 40%;
+    top:-1895px;
+    left:30px;
+    z-index: 1;
+}
+
+#cupglare {
+position: relative;
+    width: 40%;
+    padding-left: 40%;
+    top:-1930px;
+    left:45px;
+    z-index: 1;
+    opacity: .5;
+}
+
+#ingredientslist {
+    font-family: 'Shadows Into Light', cursive;
+    height: 500px;
+}
+.ingredientBox {
+    opacity: 0.4;
+    z-index: 3;
+    float: right;
+    position: relative;
+    top: 20px;
+}
+#box0 {
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+}
+
+#text {
+    padding-right: 20px;
+    position: relative;
+}
+
+#recipedisplay {
+    width: 200px;
+    padding-left: 20px;
+    z-index:1;
+}
+#ingredientslist{
+    position: relative;
+    padding-top: 30px;
+    left:-60px;
+}
+
+#gohomemsg {
+    font-family: 'Shadows Into Light', cursive;
+}
+.options a{
+    font-family: 'Shadows Into Light', cursive;
+    color: #62b4c4;
+    font-size: 40px;
+    text-decoration:none;
+    padding-top: 10px;
+    z-index: 10;
+}
+
+.options a:hover{
+    font-family: 'Shadows Into Light', cursive;
+    color: #000000;
+}
+
+.options {
+    text-align: center;
+     z-index: 60;
+
+}
+
+/*    TO CENTER STUFF    */
+html, body, #tbl_wrap { 
+    height: 94%; 
+    width: 100%; 
+    padding: 0; 
+    margin: 0; 
+}
+
+#td_wrap { 
+    vertical-align: middle; 
+    text-align: center; 
+}
