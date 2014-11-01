@@ -1,5 +1,15 @@
+html {
+    max-height: 500px;
+    height: 500px;
+}
+
+body {
+  width: 1054px;
+  height: 254px;
+  background-color: #FFF;
+}
+
 .header {
-    background: #FFFFFF;
     z-index: 300;
     height: 100px;
 }
@@ -66,8 +76,8 @@ position: relative;
 position: relative;
     width: 40%;
     padding-left: 40%;
-    top:-1725px;
-    left:85px;
+    top:-1710px;
+    left:165px;
     z-index: -1;
 }
 #Salt{
@@ -123,6 +133,7 @@ position: relative;
     position: relative;
     padding-top: 30px;
     left:-60px;
+    width: 100%;
 }
 
 #gohomemsg {
@@ -159,4 +170,18 @@ html, body, #tbl_wrap {
 #td_wrap { 
     vertical-align: middle; 
     text-align: center; 
+}
+
+/* GEHPARK HOME */
+.GEHPname * {
+    width: 100%;
+    position:fixed;
+    top: 612px;
+    left:10px;
+    display: inline;
+    font-size: 12px;
+    font-family: 'Droid Sans', sans-serif;
+    text-decoration:none;
+    color: black;
+    z-index: 3;
 }

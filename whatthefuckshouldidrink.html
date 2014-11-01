@@ -7,9 +7,16 @@
 	<script type="text/javascript" src="mixer.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="drink.css">
+	<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Droid+Sans|Reenie+Beanie|Just+Me+Again+Down+Here|Pacifico|Amatic+SC|Handlee|Crimson-Text' rel='stylesheet' type='text/css'>
 
 	<script>
-	
+	// disable scrolling completely. 
+	// $('html, body').css({
+	// 			'overflow': 'hidden',
+	// 		'height': '100%'
+	// 		})
+
+
 
 	function scrolltorecipe() {
 		if ($(window).width() < 655) {
@@ -22,20 +29,29 @@
 		    return false;
 		}
 	};
+	$(window).scroll(function() {
+		if ($(document).scrollTop() > 0 && $(window).height() < 600) {
+		}
+	});
+	$(document).scrollTop();
+
 	$(window).resize(function(){
-		var e = document.getElementById("text");
-		console.log($(window).width());
-	  	if ($(window).width() < 655) {
-	  	}
-	  	else {
+	  	if ($(window).height() > 500) {
+			$('html, body').css({
+				'overflow': 'hidden',
+			'height': '120%'
+			})
 	  	}
 	  }
 	);
+
 	$(window).load(function(){
-	  	if ($(window).width() < 655) {
-	  		var e = document.getElementById("text");
-	  	}
-	  }
+	  	if ($(window).height() > 500) {
+			$('html, body').css({
+				'overflow': 'hidden',
+			'height': '120%'
+			})
+	  }}
 	);
 $(document).ready(function()
   {
@@ -75,7 +91,6 @@ function pourdrink(drink){
 
 function garnish(gar){
 	for (i = 0; i < gar.length; i++) {
-		console.log(gar[i].nam);
 		var g = document.getElementById(gar[i].nam);
 		g.style.visibility = "visible";
 	}
@@ -91,7 +106,6 @@ function clearboxes(){
 	for (i=0; i<garlist.length; i++)
 	{
 		var g = document.getElementById(garlist[i]);
-	console.log("hiding");
 		g.style.visibility = "hidden";
 	}
 }
@@ -108,9 +122,13 @@ function givewater(){
 
 <body>
 
+<script>
+ console.log($( document ).height());
+</script>
 <div class="header">
 	<div id = "title">
 		<h1> What the fuck should I drink? </h1>
+
 	</div>
 </div>
 
@@ -124,8 +142,9 @@ function givewater(){
 			<a href="#" onclick="clearboxes(); choosedrink();">EW!</a>
 			</div>
 
+
 			<div id = "gohome">
-			<a href="#" onclick="givewater()"> ahhhplss </a>
+			<a href="#" onclick="givewater()"> letmebangbro </a>
 			</div>
 
 			
@@ -194,10 +213,16 @@ function givewater(){
 	</div>
 </div>
 </div>
+
+<div class="GEHPname">
+            <a href="/index.html">
+            <p> G R A C E &nbsp; &nbsp;  E U N H Y E &nbsp; &nbsp;  P A R K</p></a>
+
+    </div>  
+
 </div>
 
 
 <!-- TODO
-	write a README
 	html at the end
 	-->
